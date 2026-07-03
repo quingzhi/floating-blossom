@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>藏珍閣｜浮花見月</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:#f7f2eb;
+    color:#3b2f2f;
+    font-family:"Noto Serif TC",serif;
+    min-height:100vh;
+}
+
+/* 頁面 */
+.page{
+    width:760px;
+    max-width:90%;
+    margin:100px auto;
+    text-align:center;
+}
+
+.page h1{
+    font-size:40px;
+    font-weight:normal;
+    letter-spacing:10px;
+}
+
+.intro{
+    margin-top:20px;
+    color:#8d7464;
+    letter-spacing:3px;
+    line-height:2;
+}
+
+.item{
+    margin:55px 0;
+}
+
+.item h2{
+    font-size:30px;
+    font-weight:normal;
+    letter-spacing:8px;
+    margin-bottom:25px;
+}
+
+.item p{
+    color:#8d7464;
+    line-height:2.4;
+    letter-spacing:2px;
+}
+
+.divider{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:55px 0;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    width:170px;
+    height:1px;
+    background:#cdbfb3;
+}
+
+.divider span{
+    margin:0 20px;
+    color:#8d7464;
+}
+
+.ending{
+    margin:90px 0;
+    color:#8d7464;
+    line-height:2.4;
+    letter-spacing:3px;
+}
+
+/* 右側選單 */
+#menuBtn{
+    position:fixed;
+    top:28px;
+    right:32px;
+    background:none;
+    border:none;
+    color:#8d7464;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1000;
+    transition:.3s;
+}
+
+#menuBtn:hover{
+    color:#3b2f2f;
+    transform:scale(1.08);
+}
+
+#overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:998;
+}
+
+#sidebar{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:300px;
+    height:100%;
+    background:#fffaf7;
+    box-shadow:-4px 0 20px rgba(0,0,0,.12);
+    transition:.3s;
+    padding:100px 30px 30px;
+    z-index:999;
+}
+
+#sidebar.active{
+    right:0;
+}
+
+#sidebar h2{
+    text-align:center;
+    font-size:28px;
+    font-weight:normal;
+    letter-spacing:8px;
+    color:#3b2f2f;
+    margin-bottom:12px;
+}
+
+.subTitle{
+    text-align:center;
+    color:#8d7464;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:40px;
+}
+
+#sidebar a{
+    display:block;
+    padding:16px 10px;
+    color:#3b2f2f;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:2px;
+    transition:.25s;
+}
+
+#sidebar a:hover{
+    background:#f3e7de;
+    padding-left:20px;
+}
+</style>
+</head>
+
+<body>
+
+<button id="menuBtn">☷</button>
+<div id="overlay"></div>
+
+<div id="sidebar">
+    <h2>浮 花 見 月</h2>
+
+    <div class="subTitle">
+        諸葛瑾 ・ 裴婳
+    </div>
+
+    <a href="index.html">◈ 首　頁</a>
+    <a href="characters.html">◈ 人物誌</a>
+    <a href="story.html">◈ 故事卷</a>
+    <a href="gallery.html">◈ 藏珍閣</a>
+    <a href="thanks.html">◈ 鳴謝錄</a>
+</div>
+
+<main class="page">
+
+    <h1>珍 藏 閣</h1>
+
+    <p class="intro">
+        物有其形，情有所寄。
+    </p>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>紙　鳶</h2>
+        <p>
+            一縷春風，一線牽緣。<br>
+            自高空墜落桃林，<br>
+            才有了那場命定的初見。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>長命鎖</h2>
+        <p>
+            家人所繫，並非富貴。<br>
+            惟願平安順遂，<br>
+            長命無憂。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>桃花酥</h2>
+        <p>
+            春色可入盤，卻難入口。<br>
+            阿婳親手所製，<br>
+            唯供觀賞，不宜食用。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>裂　玉</h2>
+        <p>
+            一分為二，並非終局。<br>
+            裂痕未能斷情，<br>
+            反成彼此坦誠之始。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>紅繩手串</h2>
+        <p>
+            紅繩繫腕，心意相連。<br>
+            只願生生世世，不復分離。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>言事章</h2>
+        <p>
+            本為公務所用。<br>
+            偶有閒時，<br>
+            亦能印下些不足為外人道的心思。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>長　安</h2>
+        <p>
+            一隻名為長安的小白兔。<br>
+            願山河長安，<br>
+            也願歸處長安。
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>丹　青</h2>
+        <p>
+            墨彩未乾，春意已成。<br>
+            阿婳閒時最喜揮毫，<br>
+            將所見所念，盡數留於紙上。
+        </p>
+    </div>
+
+     <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>長　弓</h2>
+        <p>
+            六藝之一，君子所習。<br>
+            弓弦既張，<br>
+            所射者，亦是本心。
+        </p>
+    </div>
+
+    
+     <div class="divider"><span>❈</span></div>
+
+    <div class="item">
+        <h2>計簿殘頁</h2>
+        <p>
+            今日又被枝椏勾住頭髮。<br>
+            動彈不得。<br>
+            ■■嫌礙事提刀便削去一截，<br>
+            如今髮尾參差，倒也省得再被勾住了。<br>
+            嗚，我的頭髮。<br>
+            ——裴婳
+        </p>
+    </div>
+
+    <div class="divider"><span>❈</span></div>
+
+    <p class="ending">
+        故事雖盡，<br>
+        故物長存。
+    </p>
+
+</main>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const sidebar=document.getElementById("sidebar");
+const overlay=document.getElementById("overlay");
+
+menuBtn.onclick=function(){
+    sidebar.classList.add("active");
+    overlay.style.display="block";
+}
+
+overlay.onclick=function(){
+    sidebar.classList.remove("active");
+    overlay.style.display="none";
+}
+</script>
+
+</body>
+</html>

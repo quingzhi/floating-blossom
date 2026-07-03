@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>故事卷｜浮花見月</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:#f7f2eb;
+    color:#3b2f2f;
+    font-family:"Noto Serif TC",serif;
+    line-height:2;
+}
+
+.page{
+    width:72%;
+    max-width:920px;
+    margin:auto;
+    padding:90px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h1{
+    font-size:42px;
+    font-weight:normal;
+    letter-spacing:10px;
+}
+
+.title p{
+    color:#8d7464;
+    letter-spacing:4px;
+}
+
+.chapter{
+    border-top:1px solid #cdb8a8;
+}
+
+.chapter:last-child{
+    border-bottom:1px solid #cdb8a8;
+}
+
+.chapter-title{
+    width:100%;
+    border:none;
+    background:none;
+    padding:30px 10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    color:#3b2f2f;
+    font-family:inherit;
+}
+
+.name{
+    font-size:24px;
+    letter-spacing:4px;
+}
+
+.small{
+    display:block;
+    font-size:14px;
+    color:#8d7464;
+    letter-spacing:3px;
+    margin-top:6px;
+    text-align:left;
+}
+
+.arrow{
+    font-size:24px;
+    transition:.3s;
+}
+
+.chapter.active .arrow{
+    transform:rotate(90deg);
+}
+
+.chapter-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .6s ease;
+}
+
+.chapter-inner{
+    padding:10px 10px 48px;
+}
+
+.chapter-inner img{
+
+    display:block;
+
+    margin:30px auto;
+
+    max-width:100%;
+
+    max-height:700px;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+.label{
+    margin:8px 0 22px;
+    color:#8d7464;
+    font-size:14px;
+    letter-spacing:1px;
+    border:none;
+    background:none;
+    padding:0;
+}
+
+.label span{
+    display:inline;
+    font-size:14px;
+    color:#8d7464;
+}
+
+.label strong{
+    display:inline;
+    font-size:14px;
+    font-weight:normal;
+    color:#8d7464;
+}
+
+.quote{
+    font-size:20px;
+    color:#6d4c41;
+    margin:24px 0 18px;
+}
+
+.read{
+    display:inline-block;
+    margin-top:28px;
+    color:#3b2f2f;
+    text-decoration:none;
+    border-bottom:1px solid #3b2f2f;
+    letter-spacing:2px;
+}
+
+.pending{
+    color:#8d7464;
+}
+
+/* 右側選單 */
+#menuBtn{
+    position:fixed;
+    top:28px;
+    right:32px;
+
+    background:none;
+    border:none;
+
+    color:#8d7464;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    transition:.3s;
+}
+
+#menuBtn:hover{
+    color:#3b2f2f;
+    transform:scale(1.08);
+}
+
+#overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:998;
+}
+
+#sidebar{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:300px;
+    height:100%;
+    background:#fffaf7;
+    box-shadow:-4px 0 20px rgba(0,0,0,.12);
+    transition:.3s;
+    padding:100px 30px 30px;
+    z-index:999;
+}
+
+#sidebar.active{right:0;}
+
+#sidebar h2{
+    text-align:center;
+    font-size:28px;
+    font-weight:normal;
+    letter-spacing:8px;
+    margin-bottom:12px;
+}
+
+.subTitle{
+    text-align:center;
+    color:#8d7464;
+    font-size:14px;
+    letter-spacing:3px;
+    margin-bottom:40px;
+}
+
+#sidebar a{
+    display:block;
+    padding:16px 10px;
+    color:#3b2f2f;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+#sidebar a:hover{
+    background:#f3e7de;
+    padding-left:20px;
+}
+
+@media(max-width:800px){
+    .page{width:86%;}
+}
+</style>
+</head>
+
+<body>
+
+<button id="menuBtn">☷</button>
+<div id="overlay"></div>
+
+<div id="sidebar">
+    <h2>浮 花 見 月</h2>
+    <div class="subTitle">諸葛瑾 ・ 裴婳</div>
+
+    <a href="index.html">◈ 入　卷</a>
+<a href="characters.html">◈ 人物誌</a>
+<a href="story.html">◈ 故事卷</a>
+<a href="gallery.html">◈ 藏珍閣</a>
+<a href="thanks.html">◈ 鳴謝錄</a>
+</div>
+
+<main class="page">
+
+<section class="title">
+    <h1>故事卷</h1>
+    <p>浮花見月 · 十二卷</p>
+</section>
+
+<!-- 壹 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span>
+        <span class="name">壹．紅雨著春</span>
+        <span class="small">初見</span>
+    </span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/hongyu.PNG">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>金玉良緣</strong>
+    </div>
+
+    <div class="quote">紙鳶斷線，卻牽起一生。</div>
+    <p>風箏斷線，落入桃花林，也落在了諸葛瑾身旁。那一日春光正好，紅雨紛紛，他們第一次望見彼此。</p>
+
+    <a class="read" href="stories/hongyu.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 貳 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">貳．人間蜉蝣</span><span class="small">書寫中</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/fuyou.jpg">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>人間蜉蝣</strong>
+    </div>
+
+    <div class="quote">浮生若寄，幸而與君相逢。</div>
+    <p class="pending">此卷尚未落筆，敬請靜候。</p>
+</div>
+</div>
+</section>
+
+<!-- 參 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">參．悸動</span><span class="small">書寫中</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/jidong.jpg">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>半壺紗</strong>
+    </div>
+
+    <div class="quote">原來心動，從來沒有道理。</div>
+    <p class="pending">此卷尚未落筆，敬請靜候。</p>
+</div>
+</div>
+</section>
+
+<!-- 肆 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">肆．春時桃萼正芳菲</span><span class="small">相伴</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/chun.jpg">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>失調名</strong>
+    </div>
+
+    <div class="quote">春光未老，人亦未遲。</div>
+    <p>桃花正盛，春色未央。他們在一來一往之間慢慢靠近，將少年心事藏進枝頭花影。</p>
+
+    <a class="read" href="stories/chun.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 伍 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">伍．入畫</span><span class="small">書寫中</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/ruhua.jpg">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>入畫江南</strong>
+    </div>
+
+    <div class="quote">從此筆墨所至，皆是你。</div>
+    <p class="pending">此卷尚未落筆，敬請靜候。</p>
+</div>
+</div>
+</section>
+
+<!-- 陸 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">陸．玦月</span><span class="small">定情</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/jueyue.png">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>仙瑤</strong>
+    </div>
+
+    <div class="quote">半玦成雙，自此不離。</div>
+    <p>月色如玦，照見兩顆終於肯靠近的心。那些未曾說出口的情意，終於有了歸處。</p>
+
+    <a class="read" href="stories/jueyue.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 柒 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">柒．共此秋</span><span class="small">相守</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/gongqiu.PNG">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>牽絲戲</strong>
+    </div>
+
+    <div class="quote">願年年秋色，都有你共賞。</div>
+    <p>秋意漸深，庭中風起。他們共賞一場秋色，也在沉默與陪伴裡，確認彼此的心意。</p>
+
+    <a class="read" href="stories/gongqiu.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 捌 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">捌．吻</span><span class="small">書寫中</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/kiss.png">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>御龍吟</strong>
+    </div>
+
+    <div class="quote">唇齒相依，勝過萬語千言。</div>
+    <p class="pending">此卷尚未落筆，敬請靜候。</p>
+</div>
+</div>
+</section>
+
+<!-- 玖 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">玖．歲歲年年</span><span class="small">日常</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/suinian.png">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>畫心</strong>
+    </div>
+
+    <div class="quote">歲歲皆歡愉，年年常相見。</div>
+    <p>不再只是驚鴻一面，而是長久相伴。四時流轉，他們把心意藏進每一個尋常日子。</p>
+
+    <a class="read" href="stories/suinian.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 拾 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">拾．兩相歡</span><span class="small">兩心</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/liangxianghuan.png">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>零落</strong>
+    </div>
+
+    <div class="quote">願得一人心，白首不相離。</div>
+    <p>兩相歡喜，便勝過人間萬語。這一卷裡，他們不再遮掩，只願把餘生交予彼此。</p>
+
+    <a class="read" href="stories/liangxianghuan.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 拾壹 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">拾壹．長安長安</span><span class="small">歸處</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/changan.jpg">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>無情畫</strong>
+    </div>
+
+    <div class="quote">山河萬里，只願與君同歸。</div>
+    <p>願山河長安，也願歲歲有你，於是那個名字，落在了牠身上。</p>
+
+    <a class="read" href="stories/changan.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+<!-- 拾貳 -->
+<section class="chapter">
+<button class="chapter-title">
+    <span><span class="name">拾貳．雨霖鈴</span><span class="small">終章</span></span>
+    <span class="arrow">›</span>
+</button>
+<div class="chapter-content">
+<div class="chapter-inner">
+    <img src="images/yulinling.png">
+
+    <div class="label">
+        <span>此卷宜聞</span>
+        <strong>空探枝</strong>
+    </div>
+
+    <div class="quote">曲終人未散，情仍長留。</div>
+    <p>有些故事走到終章，卻並不是結束，而是另一種長久。</p>
+
+    <a class="read" href="stories/yulinling.html">展卷 →</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<script>
+const chapters=document.querySelectorAll(".chapter");
+
+chapters.forEach(chapter=>{
+    const btn=chapter.querySelector(".chapter-title");
+    const content=chapter.querySelector(".chapter-content");
+
+    btn.onclick=function(){
+        chapter.classList.toggle("active");
+
+        if(chapter.classList.contains("active")){
+            content.style.maxHeight=content.scrollHeight+"px";
+        }else{
+            content.style.maxHeight=null;
+        }
+    }
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const sidebar=document.getElementById("sidebar");
+const overlay=document.getElementById("overlay");
+
+menuBtn.onclick=function(){
+    sidebar.classList.add("active");
+    overlay.style.display="block";
+}
+
+overlay.onclick=function(){
+    sidebar.classList.remove("active");
+    overlay.style.display="none";
+}
+</script>
+
+</body>
+</html>

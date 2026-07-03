@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浮花見月</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+    font-family:"Noto Serif TC",serif;
+}
+
+/* 封面 */
+#cover{
+    position:fixed;
+    inset:0;
+    cursor:pointer;
+}
+
+#cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 影片 */
+#intro{
+    position:fixed;
+    inset:0;
+    display:none;
+}
+
+#intro video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 略過按鈕 */
+#skipBtn{
+    position:absolute;
+    top:30px;
+    right:30px;
+    padding:10px 18px;
+    border:none;
+    border-radius:30px;
+    background:rgba(0,0,0,.45);
+    color:white;
+    font-size:15px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.25s;
+    z-index:10;
+}
+
+#skipBtn:hover{
+    background:rgba(0,0,0,.65);
+}
+
+/* 引 */
+#story{
+    display:none;
+    position:absolute;
+    inset:0;
+    background:#f7f2eb;
+    color:#8d7464;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    line-height:2.4;
+}
+
+.storyBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.introTitle{
+    font-size:24px;
+    letter-spacing:8px;
+    margin-bottom:40px;
+    font-weight:normal;
+}
+
+#story p{
+    font-size:20px;
+    letter-spacing:3px;
+}
+
+.nextPage{
+    margin-top:60px;
+    display:inline-block;
+    color:#8d7464;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:4px;
+    transition:.3s;
+}
+
+.nextPage:hover{
+    letter-spacing:8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 封面 -->
+<div id="cover">
+    <img src="images/name.jpg" alt="">
+</div>
+
+<!-- PV -->
+<div id="intro">
+    <video id="video" src="videos/first-meet.mp4"></video>
+    <button id="skipBtn">略過序章</button>
+</div>
+
+<!-- 引 -->
+<div id="story">
+    <div class="storyBox">
+
+        <div class="introTitle">❈ 引 ❈</div>
+
+        <p>
+        紅雨初映春晴好，柳煙輕，鶯聲小。<br>
+        素手牽絲，忽斷碧雲杪。<br>
+        紙鳶斜墜粉牆東，落苔階，驚棲鳥。<br>
+        還一溪花影相看處，風也靜，雲也悄。<br>
+        陌上誰家，環佩叮咚杳。<br>
+        人面桃花，相看未了。<br>
+        欲寄彩箋兼尺素，山重重，水渺渺
+        </p>
+
+        <a class="nextPage" href="menu.html">展卷 →</a>
+
+    </div>
+</div>
+
+<script>
+const cover = document.getElementById("cover");
+const intro = document.getElementById("intro");
+const video = document.getElementById("video");
+const story = document.getElementById("story");
+const skipBtn = document.getElementById("skipBtn");
+
+cover.onclick = function(){
+    cover.style.display = "none";
+    intro.style.display = "block";
+    video.play();
+}
+
+function showIntroText(){
+    video.pause();
+    intro.style.display = "none";
+    story.style.display = "flex";
+    document.body.style.background = "#f7f2eb";
+    document.body.style.overflow = "hidden";
+}
+
+video.onended = showIntroText;
+
+skipBtn.onclick = function(){
+    showIntroText();
+}
+</script>
+
+</body>
+</html>
