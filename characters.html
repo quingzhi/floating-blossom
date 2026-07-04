@@ -159,42 +159,79 @@ body{
 
     .page{
         width:92%;
-        margin:60px auto;
+        max-width:420px;
+        padding:60px 0;
     }
 
-    .page h1{
+    .title{
+        margin-bottom:42px;
+    }
+
+    .title h1{
         font-size:28px;
         letter-spacing:6px;
+        font-weight:400;
     }
 
-    .intro{
+    .title p{
         font-size:13px;
         letter-spacing:2px;
         margin-top:12px;
     }
 
-    .divider{
-        margin:28px auto;
+    .chapter-title{
+        padding:22px 4px;
     }
 
-    .divider::before,
-    .divider::after{
-        width:110px;
-    }
-
-    .section{
-        margin-bottom:70px;
-    }
-
-    .section h2{
+    .name{
         font-size:19px;
-        letter-spacing:5px;
-        margin-bottom:28px;
+        letter-spacing:3px;
     }
 
-    .section img{
+    .small{
+        font-size:12px;
+        letter-spacing:2px;
+        margin-top:5px;
+    }
+
+    .arrow{
+        font-size:20px;
+    }
+
+    .chapter-inner{
+        padding:6px 2px 42px;
+    }
+
+    .chapter-inner img{
         width:100%;
         max-width:100%;
+        max-height:none;
+        margin:24px auto;
+    }
+
+    .label,
+    .label span,
+    .label strong{
+        font-size:12px;
+        letter-spacing:1px;
+    }
+
+    .quote{
+        font-size:16px;
+        line-height:2;
+        margin:22px 0 14px;
+    }
+
+    .chapter-inner p{
+        font-size:16px;
+        line-height:2.3;
+        letter-spacing:1px;
+    }
+
+    .read{
+        font-size:15px;
+        margin-top:24px;
+        letter-spacing:2px;
     }
 
     #menuBtn{
@@ -207,6 +244,23 @@ body{
         width:240px;
         right:-240px;
     }
+
+ #sidebar h2{
+    font-size:24px;
+    font-weight:400;
+    letter-spacing:6px;
+}
+
+.subTitle{
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+#sidebar a{
+    font-size:17px;
+    padding:16px 10px;
+}
+
 }
 </style>
 </head>
