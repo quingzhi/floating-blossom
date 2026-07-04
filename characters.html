@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>人物｜浮花見月</title>
+<title>人物誌｜浮花見月</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     background:#f7f2eb;
@@ -14,76 +18,90 @@ body{
     font-family:"Noto Serif TC",serif;
 }
 
-.container{
-    width:95%;
-    margin:auto;
-    min-height:100vh;
-    display:grid;
-    grid-template-columns:1fr 720px 1fr;
-    align-items:center;
-    gap:50px;
+.page{
+    width:min(92%,1100px);
+    margin:100px auto;
 }
 
-.profile{
-
-    background:rgba(255,255,255,.55);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:0;
-
-    padding:40px;
-
-    line-height:2.1;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+.page h1{
+    text-align:center;
+    font-size:42px;
+    font-weight:normal;
+    letter-spacing:10px;
 }
 
-.profile h2{
-    font-size:38px;
-    margin-bottom:8px;
-}
-
-.subtitle{
+.intro{
+    text-align:center;
+    margin-top:18px;
     color:#8d7464;
-    margin-bottom:25px;
-    font-size:18px;
+    letter-spacing:3px;
+    line-height:2;
 }
 
-.profile p{
-    font-size:17px;
-}
-
-.character{
+.divider{
     display:flex;
     justify-content:center;
     align-items:center;
+    margin:70px auto;
 }
 
-.character img{
-    width:140%;
-    max-height:95vh;
-    object-fit:contain;
+.divider::before,
+.divider::after{
+    content:"";
+    width:180px;
+    height:1px;
+    background:#cdbfb3;
 }
 
-/* 右側選單 */
+.divider span{
+    margin:0 18px;
+    color:#8d7464;
+}
+
+.section{
+    margin-bottom:90px;
+}
+
+.section h2{
+    text-align:center;
+    font-size:32px;
+    font-weight:normal;
+    letter-spacing:10px;
+    margin-bottom:45px;
+}
+
+.section img{
+    display:block;
+    margin:auto;
+    height:auto;
+    box-shadow:none;
+    border-radius:0;
+}
+
+.page{
+    width:min(100%,1600px);
+    margin:60px auto;
+}
+
+.section:first-of-type img{
+    width:100%;
+}
+
+.section:not(:first-of-type) img{
+    width:100%;
+}
+
+/* 側邊欄 */
 #menuBtn{
     position:fixed;
     top:28px;
     right:32px;
-
     background:none;
     border:none;
-
     color:#8d7464;
-
     font-size:28px;
-
     cursor:pointer;
-
     z-index:1000;
-
     transition:.3s;
 }
 
@@ -108,11 +126,13 @@ body{
     height:100%;
     background:#fffaf7;
     box-shadow:-4px 0 20px rgba(0,0,0,.12);
+    padding:100px 30px 30px;
     transition:.3s;
-
-    padding:100px 30px 30px 30px;
-
     z-index:999;
+}
+
+#sidebar.active{
+    right:0;
 }
 
 #sidebar h2{
@@ -120,7 +140,6 @@ body{
     font-size:28px;
     font-weight:normal;
     letter-spacing:8px;
-    color:#3b2f2f;
     margin-bottom:12px;
 }
 
@@ -128,7 +147,7 @@ body{
     text-align:center;
     color:#8d7464;
     font-size:14px;
-    letter-spacing:5px;
+    letter-spacing:4px;
     margin-bottom:40px;
 }
 
@@ -147,93 +166,31 @@ body{
     padding-left:20px;
 }
 
-#sidebar.active{
-    right:0;
-}
-
-@media(max-width:1100px){
-    .container{
-        grid-template-columns:1fr;
-        padding:120px 20px 60px;
+@media(max-width:768px){
+    .page{
+        width:95%;
+        margin:80px auto;
     }
 
-    .character{
-        order:-1;
+    .page h1{
+        font-size:34px;
     }
 
-    .character img{
+    .section h2{
+        font-size:26px;
+    }
+
+    .divider::before,
+    .divider::after{
+        width:90px;
+    }
+
+    .section:first-of-type img,
+    .section:not(:first-of-type) img{
         width:100%;
-        max-height:70vh;
+        max-width:100%;
     }
 }
-
-/* 分隔線 */
-
-.divider{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin:90px 0 70px;
-
-}
-
-.divider::before,
-.divider::after{
-
-    content:"";
-
-    width:180px;
-    height:1px;
-
-    background:#cdbfb3;
-
-}
-
-.divider span{
-
-    margin:0 18px;
-
-    color:#8d7464;
-
-    font-size:18px;
-
-}
-
-/* 立繪標題 */
-
-.illustrationTitle{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
-}
-
-.illustrationTitle h2{
-
-    font-size:34px;
-
-    font-weight:normal;
-
-    letter-spacing:10px;
-
-}
-
-.illustrationTitle p{
-
-    color:#8d7464;
-
-    margin-top:10px;
-
-    letter-spacing:3px;
-
-    font-size:15px;
-
-}
-
-
 </style>
 </head>
 
@@ -249,46 +206,44 @@ body{
     <div class="subTitle">
         諸葛瑾 ・ 裴婳
     </div>
+
     <a href="index.html">◈ 入　卷</a>
-<a href="characters.html">◈ 人物誌</a>
-<a href="story.html">◈ 故事卷</a>
-<a href="gallery.html">◈ 藏珍閣</a>
-<a href="thanks.html">◈ 鳴謝錄</a>
+    <a href="characters.html">◈ 人物誌</a>
+    <a href="story.html">◈ 故事卷</a>
+    <a href="gallery.html">◈ 藏珍閣</a>
+    <a href="thanks.html">◈ 鳴謝錄</a>
 </div>
 
-<div class="container">
+<main class="page">
 
-    <div class="profile">
-        <h2>諸葛瑾</h2>
-        <div class="subtitle">字 子瑜</div>
-        <p>
-        琅琊諸葛氏長公子。<br>
-        性情溫潤守禮，克己復禮，鮮少將情緒表露於人前。<br><br>
-        家道中落後，早早便肩負起長兄的責任。縱使受盡冷眼，
-        仍不願失了風骨與禮節。<br><br>
-        少年白髮，是他最在意的心事，
-        但卻是裴婳初見他時，最先注意到的一抹雪色。
-        </p>
-    </div>
+    <h1>人 物 誌</h1>
 
-    <div class="character">
-        <img src="images/characters.png">
-    </div>
+    <p class="intro">
+        紙上藏其形，筆下見其心
+    </p>
 
-    <div class="profile">
-        <h2>裴婳</h2>
-        <div class="subtitle">字 若笙</div>
-        <p>
-        襄陽裴氏本家獨生女。<br>
-        張揚、自信、耀眼，是眾人眼中的名門女公子。<br><br>
-        她待人有禮，卻從不容忍輕慢；
-        對陌生人疏離有度，對珍視之人卻總忍不住撒嬌。<br><br>
-        如春日盛放的桃花，明媚而燦爛，
-        也是諸葛瑾生命中最溫柔的一場春風。
-        </p>
-    </div>
+    <div class="divider"><span>❈</span></div>
 
-</div>
+    <section class="section">
+      
+        <img src="images/character-info.png" alt="人物小傳">
+    </section>
+
+    <div class="divider"><span>❈</span></div>
+
+    <section class="section">
+        <h2>計 簿 抄 本</h2>
+        <img src="images/jibu.jpg" alt="計簿抄本">
+    </section>
+
+    <div class="divider"><span>❈</span></div>
+
+    <section class="section">
+        <h2>繪 像 錄</h2>
+        <img src="images/portrait.jpg" alt="繪像錄">
+    </section>
+
+</main>
 
 <script>
 const menuBtn=document.getElementById("menuBtn");
