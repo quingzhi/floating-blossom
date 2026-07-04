@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>故事卷｜浮花見月</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     background:#f7f2eb;
     color:#3b2f2f;
-    font-family:"Noto Serif TC",serif;
+    font-family:"Noto Serif TC","Source Han Serif TC","PMingLiU","MingLiU",serif;
     line-height:2;
 }
 
@@ -230,9 +234,111 @@ body{
     padding-left:20px;
 }
 
-@media(max-width:800px){
-    .page{width:86%;}
+@media(max-width:768px){
+
+    .page{
+        width:92%;
+        max-width:420px;
+        padding:60px 0;
+    }
+
+    .title{
+        margin-bottom:42px;
+    }
+
+    .title h1{
+        font-size:28px;
+        letter-spacing:6px;
+        font-weight:400;
+    }
+
+    .title p{
+        font-size:13px;
+        letter-spacing:2px;
+        margin-top:12px;
+    }
+
+    .chapter-title{
+        padding:22px 4px;
+    }
+
+    .name{
+        font-size:19px;
+        letter-spacing:3px;
+    }
+
+    .small{
+        font-size:12px;
+        letter-spacing:2px;
+        margin-top:5px;
+    }
+
+    .arrow{
+        font-size:20px;
+    }
+
+    .chapter-inner{
+        padding:6px 2px 42px;
+    }
+
+    .chapter-inner img{
+        width:100%;
+        max-width:100%;
+        max-height:none;
+        margin:24px auto;
+    }
+
+    .label,
+    .label span,
+    .label strong{
+        font-size:12px;
+        letter-spacing:1px;
+    }
+
+    .quote{
+        font-size:16px;
+        line-height:2;
+        margin:22px 0 14px;
+    }
+
+    .chapter-inner p{
+        font-size:16px;
+        line-height:2.3;
+        letter-spacing:1px;
+    }
+
+    .read{
+        font-size:15px;
+        margin-top:24px;
+        letter-spacing:2px;
+    }
+
+    #menuBtn{
+        top:18px;
+        right:20px;
+        font-size:26px;
+    }
+
+    #sidebar{
+        width:240px;
+        right:-240px;
+    }
+
+    #sidebar h2{
+        font-size:24px;
+        letter-spacing:6px;
+    }
+
+    .subTitle{
+        font-size:13px;
+        letter-spacing:3px;
+    }
+
+    #sidebar a{
+        font-size:17px;
+    }
 }
+
 </style>
 </head>
 

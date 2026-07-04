@@ -5,28 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>人物誌｜浮花見月</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     background:#f7f2eb;
     color:#3b2f2f;
-    font-family:"Noto Serif TC",serif;
+    font-family:"Noto Serif TC","Source Han Serif TC","PMingLiU","MingLiU",serif;
 }
 
 .page{
-    width:min(92%,1100px);
-    margin:100px auto;
+    width:min(100%,1600px);
+    margin:60px auto;
 }
 
 .page h1{
     text-align:center;
     font-size:42px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:10px;
 }
 
@@ -65,30 +65,19 @@ body{
 .section h2{
     text-align:center;
     font-size:32px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:10px;
     margin-bottom:45px;
 }
 
 .section img{
     display:block;
-    margin:auto;
+    width:100%;
+    max-width:100%;
     height:auto;
+    margin:auto;
     box-shadow:none;
     border-radius:0;
-}
-
-.page{
-    width:min(100%,1600px);
-    margin:60px auto;
-}
-
-.section:first-of-type img{
-    width:100%;
-}
-
-.section:not(:first-of-type) img{
-    width:100%;
 }
 
 /* 側邊欄 */
@@ -138,7 +127,7 @@ body{
 #sidebar h2{
     text-align:center;
     font-size:28px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:8px;
     margin-bottom:12px;
 }
@@ -167,28 +156,56 @@ body{
 }
 
 @media(max-width:768px){
+
     .page{
-        width:95%;
-        margin:80px auto;
+        width:92%;
+        margin:60px auto;
     }
 
     .page h1{
-        font-size:34px;
+        font-size:28px;
+        letter-spacing:6px;
     }
 
-    .section h2{
-        font-size:26px;
+    .intro{
+        font-size:13px;
+        letter-spacing:2px;
+        margin-top:12px;
+    }
+
+    .divider{
+        margin:28px auto;
     }
 
     .divider::before,
     .divider::after{
-        width:90px;
+        width:110px;
     }
 
-    .section:first-of-type img,
-    .section:not(:first-of-type) img{
+    .section{
+        margin-bottom:70px;
+    }
+
+    .section h2{
+        font-size:19px;
+        letter-spacing:5px;
+        margin-bottom:28px;
+    }
+
+    .section img{
         width:100%;
         max-width:100%;
+    }
+
+    #menuBtn{
+        top:18px;
+        right:20px;
+        font-size:26px;
+    }
+
+    #sidebar{
+        width:240px;
+        right:-240px;
     }
 }
 </style>
@@ -225,7 +242,6 @@ body{
     <div class="divider"><span>❈</span></div>
 
     <section class="section">
-      
         <img src="images/character-info.png" alt="人物小傳">
     </section>
 

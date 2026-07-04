@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>目錄｜浮花見月</title>
+<title>卷覽｜浮花見月</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -14,113 +17,80 @@
 }
 
 body{
-
     background:#f7f2eb;
     color:#3b2f2f;
-    font-family:"Noto Serif TC",serif;
+    font-family:"Noto Serif TC","Source Han Serif TC","PMingLiU","MingLiU",serif;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
     min-height:100vh;
-
 }
 
 .container{
-
     text-align:center;
     width:500px;
-
+    max-width:90%;
+    padding:55px 0;
 }
 
 h1{
-
     font-size:40px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:10px;
-
 }
 
 .sub{
-
     color:#8d7464;
     margin-top:15px;
     letter-spacing:3px;
     font-size:15px;
-
 }
 
 .line{
-
     width:180px;
     height:1px;
     background:#d5c8bc;
-
     margin:40px auto;
-
 }
 
 .title{
-
     font-size:24px;
     letter-spacing:8px;
     color:#8d7464;
-
 }
 
 .menu{
-
-    margin-top:45px;
-
+    margin-top:42px;
 }
 
 .menu a{
-
     display:block;
-
     color:#3b2f2f;
-
     text-decoration:none;
-
     font-size:22px;
-
     letter-spacing:5px;
-
-    padding:18px 0;
-
+    padding:17px 0;
     transition:.3s;
-
 }
 
 .menu a:hover{
-
     color:#8d7464;
-
     letter-spacing:10px;
-
 }
 
 .footer{
-
-    margin-top:70px;
-
+    margin-top:65px;
     color:#9b8d82;
-
     font-size:14px;
-
     letter-spacing:3px;
-
 }
 
 .fade{
-
     opacity:0;
-
     transform:translateY(20px);
-
     animation:fade .8s forwards;
-
 }
 
 .fade:nth-child(1){animation-delay:.1s;}
@@ -131,66 +101,93 @@ h1{
 .fade:nth-child(6){animation-delay:1.05s;}
 
 @keyframes fade{
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-}
+@media(max-width:768px){
 
+    .container{
+        width:86%;
+        padding:40px 0;
+    }
+
+    h1{
+        font-size:28px;
+        letter-spacing:6px;
+    }
+
+    .sub{
+        font-size:13px;
+        letter-spacing:2px;
+        margin-top:12px;
+    }
+
+    .line{
+        width:110px;
+        margin:28px auto;
+    }
+
+    .title{
+        font-size:19px;
+        letter-spacing:5px;
+    }
+
+    .menu{
+        margin-top:22px;
+    }
+
+    .menu a{
+        font-size:19px;
+        letter-spacing:3px;
+        padding:11px 0;
+    }
+
+    .menu a:hover{
+        letter-spacing:3px;
+    }
+
+    .footer{
+        margin-top:42px;
+        font-size:12px;
+        letter-spacing:2px;
+    }
+}
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="fade">
+    <div class="fade">
+        <h1>浮 花 見 月</h1>
 
-<h1>浮 花 見 月</h1>
+        <div class="sub">
+            諸葛瑾 ・ 裴婳
+        </div>
+    </div>
 
-<div class="sub">
-諸葛瑾 ・ 裴婳
-</div>
+    <div class="line fade"></div>
 
-</div>
+    <div class="title fade">
+        卷　覽
+    </div>
 
-<div class="line fade"></div>
+    <div class="menu">
+        <a class="fade" href="characters.html">人物誌</a>
+        <a class="fade" href="story.html">故事卷</a>
+        <a class="fade" href="gallery.html">藏珍閣</a>
+        <a class="fade" href="thanks.html">鳴謝錄</a>
+    </div>
 
-<div class="title fade">
-卷　覽
-</div>
+    <div class="line fade"></div>
 
-<div class="menu">
-
-<a class="fade" href="characters.html">
-人物誌
-</a>
-
-<a class="fade" href="story.html">
-故事卷
-</a>
-
-<a class="fade" href="gallery.html">
-藏珍閣
-</a>
-
-<a class="fade" href="thanks.html">
-鳴謝錄
-</a>
-
-</div>
-
-<div class="line fade"></div>
-
-<div class="footer fade">
-始於　2024.05.28
-</div>
+    <div class="footer fade">
+        始於　2024.05.28
+    </div>
 
 </div>
 
