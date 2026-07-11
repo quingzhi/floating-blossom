@@ -10,7 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     background:#f7f2eb;
@@ -21,47 +25,30 @@ body{
 
 /* 頁面 */
 .page{
-    width:760px;
-    max-width:90%;
-    margin:100px auto;
+    width:min(92%,1200px);
+    margin:90px auto;
     text-align:center;
 }
 
 .page h1{
     font-size:40px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:10px;
 }
 
 .intro{
-    margin-top:20px;
+    margin-top:18px;
     color:#8d7464;
+    font-size:15px;
     letter-spacing:3px;
     line-height:2;
-}
-
-.item{
-    margin:55px 0;
-}
-
-.item h2{
-    font-size:30px;
-    font-weight:normal;
-    letter-spacing:8px;
-    margin-bottom:25px;
-}
-
-.item p{
-    color:#8d7464;
-    line-height:2.4;
-    letter-spacing:2px;
 }
 
 .divider{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin:55px 0;
+    margin:55px auto 65px;
 }
 
 .divider::before,
@@ -77,11 +64,158 @@ body{
     color:#8d7464;
 }
 
+/* 置物櫃 */
+.cabinet{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap:52px;
+    row-gap:78px;
+    align-items:end;
+}
+
+.artifact{
+    appearance:none;
+    border:none;
+    background:none;
+    font-family:inherit;
+    color:#3b2f2f;
+    cursor:pointer;
+    text-align:center;
+    min-width:0;
+}
+
+.artifact-image{
+    height:260px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    padding:10px 10px 0;
+}
+
+.artifact-image img{
+    display:block;
+    max-width:100%;
+    max-height:245px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+.artifact:hover .artifact-image img{
+    transform:translateY(-6px) scale(1.03);
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.08));
+}
+
+/* 木架 */
+/* 展示架（極簡水墨風） */
+.shelf{
+    position:relative;
+    width:68%;
+    height:0;
+    margin:12px auto 0;
+    border-top:2px solid rgba(141,116,100,.45);
+}
+
+.shelf::before{
+    content:"";
+    position:absolute;
+    left:-3px;
+    top:-2px;
+    width:8px;
+    height:3px;
+    background:rgba(141,116,100,.45);
+    border-radius:50%;
+}
+
+.shelf::after{
+    content:"";
+    position:absolute;
+    right:-3px;
+    top:-2px;
+    width:6px;
+    height:2px;
+    background:rgba(141,116,100,.3);
+    border-radius:50%;
+}
+
+/* 結尾 */
 .ending{
-    margin:90px 0;
+    margin:95px 0 20px;
     color:#8d7464;
     line-height:2.4;
     letter-spacing:3px;
+}
+
+/* 介紹卡彈窗 */
+#artifactModal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(35,27,24,.72);
+    padding:45px 20px;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:opacity .25s ease;
+}
+
+#artifactModal.active{
+    display:flex;
+    opacity:1;
+}
+
+.modalBox{
+    position:relative;
+    max-width:min(88vw,820px);
+    max-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:cardAppear .3s ease;
+}
+
+#artifactCard{
+    display:block;
+    max-width:100%;
+    max-height:88vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    opacity:.76;
+    box-shadow:0 18px 55px rgba(0,0,0,.24);
+}
+
+#closeModal{
+    position:absolute;
+    top:-18px;
+    right:-18px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#fffaf7;
+    color:#6d5548;
+    font-size:25px;
+    line-height:40px;
+    cursor:pointer;
+    box-shadow:0 5px 16px rgba(0,0,0,.18);
+    z-index:2;
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:translateY(12px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
 /* 右側選單 */
@@ -103,7 +237,7 @@ body{
     transform:scale(1.08);
 }
 
-#overlay{
+#sidebarOverlay{
     display:none;
     position:fixed;
     inset:0;
@@ -131,7 +265,7 @@ body{
 #sidebar h2{
     text-align:center;
     font-size:28px;
-    font-weight:normal;
+    font-weight:400;
     letter-spacing:8px;
     color:#3b2f2f;
     margin-bottom:12px;
@@ -160,60 +294,122 @@ body{
     padding-left:20px;
 }
 
+/* 平板 */
+@media(max-width:950px){
+
+    .cabinet{
+        grid-template-columns:repeat(2,1fr);
+        column-gap:36px;
+    }
+}
+
+/* 手機 */
 @media(max-width:768px){
 
     .page{
-        width:92%;
-        max-width:420px;
+        width:94%;
         margin:60px auto;
     }
 
     .page h1{
         font-size:28px;
         letter-spacing:6px;
-        font-weight:400;
     }
 
     .intro{
+        margin-top:12px;
         font-size:13px;
         letter-spacing:2px;
-        margin-top:12px;
-    }
-
-    .item{
-        margin:42px 0;
-    }
-
-    .item h2{
-        font-size:19px;
-        letter-spacing:5px;
-        margin-bottom:18px;
-    }
-
-    .item p{
-        font-size:16px;
-        line-height:2.3;
-        letter-spacing:1px;
     }
 
     .divider{
-        margin:28px auto;
+        margin:28px auto 42px;
     }
 
     .divider::before,
     .divider::after{
-        width:110px;
+        width:90px;
     }
 
     .divider span{
-        margin:0 18px;
+        margin:0 15px;
     }
 
+    .cabinet{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        column-gap:18px;
+        row-gap:48px;
+    }
+
+    .artifact-image{
+    height:160px;
+    padding:0;
+}
+
+.artifact-image img{
+    max-height:150px;
+}
+
+    .artifact:hover .artifact-image img{
+        transform:none;
+        filter:none;
+    }
+.shelf{
+    position:relative;
+    width:62%;
+    height:0;
+    margin:8px auto 0;
+    border-top:1.5px solid rgba(141,116,100,.45);
+}
+
+.shelf::before{
+    content:"";
+    position:absolute;
+    left:-2px;
+    top:-1.5px;
+    width:6px;
+    height:2px;
+    background:rgba(141,116,100,.45);
+    border-radius:50%;
+}
+
+.shelf::after{
+    content:"";
+    position:absolute;
+    right:-2px;
+    top:-1.5px;
+    width:5px;
+    height:1.5px;
+    background:rgba(141,116,100,.3);
+    border-radius:50%;
+}
     .ending{
-        margin:55px 0;
-        font-size:16px;
-        line-height:2.3;
+        margin:65px 0 10px;
+        font-size:14px;
         letter-spacing:2px;
+    }
+
+    #artifactModal{
+        padding:25px 12px;
+    }
+
+    .modalBox{
+        max-width:94vw;
+        max-height:90vh;
+    }
+
+    #artifactCard{
+        max-height:86vh;
+        opacity:.76;
+    }
+
+    #closeModal{
+        top:-14px;
+        right:-6px;
+        width:36px;
+        height:36px;
+        font-size:22px;
+        line-height:36px;
     }
 
     #menuBtn{
@@ -225,29 +421,73 @@ body{
     #sidebar{
         width:240px;
         right:-240px;
+        padding:90px 28px 30px;
     }
 
     #sidebar h2{
-        font-size:24px;
-        letter-spacing:6px;
+        font-size:22px;
+        letter-spacing:5px;
+        margin-bottom:10px;
     }
 
     .subTitle{
-        font-size:13px;
-        letter-spacing:3px;
+        font-size:12px;
+        letter-spacing:2px;
+        margin-bottom:30px;
     }
 
     #sidebar a{
-        font-size:17px;
+        padding:13px 10px;
+        font-size:15px;
     }
+}
+
+/* 手機提示 */
+#tapHint{
+    position:fixed;
+    left:50%;
+    bottom:42px;
+    transform:translateX(-50%) translateY(10px);
+
+    padding:10px 18px;
+    border-radius:999px;
+
+    background:rgba(255,250,247,.9);
+    color:#8d7464;
+
+    font-size:13px;
+    letter-spacing:2px;
+    white-space:nowrap;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:opacity .6s ease, transform .6s ease, visibility .6s;
+
+    z-index:3000;
+}
+
+#tapHint.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
+
+@media(min-width:769px){
+    #tapHint{
+        display:none;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
-<button id="menuBtn">☷</button>
-<div id="overlay"></div>
+<button id="menuBtn" aria-label="開啟選單">☷</button>
+<div id="sidebarOverlay"></div>
 
 <div id="sidebar">
     <h2>浮 花 見 月</h2>
@@ -267,125 +507,85 @@ body{
 
     <h1>藏 珍 閣</h1>
 
-
     <p class="intro">
         物有其形，情有所寄
     </p>
 
     <div class="divider"><span>❈</span></div>
 
-    <div class="item">
-        <h2>紙　鳶</h2>
-        <p>
-            一縷春風，一線牽緣。<br>
-            自高空墜落桃林，<br>
-            才有了那場命定的初見。
-        </p>
-    </div>
+    <section class="cabinet">
 
-    <div class="divider"><span>❈</span></div>
+        <button class="artifact" data-card="images/紙鳶a.PNG" aria-label="查看紙鳶">
+            <div class="artifact-image">
+                <img src="images/紙鳶.png" alt="紙鳶">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="item">
-        <h2>長命鎖</h2>
-        <p>
-            家人所繫，並非富貴。<br>
-            惟願平安順遂，<br>
-            長命無憂。
-        </p>
-    </div>
+        <button class="artifact" data-card="images/長命鎖a.PNG" aria-label="查看長命鎖">
+            <div class="artifact-image">
+                <img src="images/長命鎖.png" alt="長命鎖">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="divider"><span>❈</span></div>
+        <button class="artifact" data-card="images/桃花酥a.PNG" aria-label="查看桃花酥">
+            <div class="artifact-image">
+                <img src="images/桃花酥.png" alt="桃花酥">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="item">
-        <h2>桃花酥</h2>
-        <p>
-            春色可入盤，卻難入口。<br>
-            阿婳親手所製，<br>
-            唯供觀賞，不宜食用。
-        </p>
-    </div>
+        <button class="artifact" data-card="images/裂玉a.PNG" aria-label="查看裂玉">
+            <div class="artifact-image">
+                <img src="images/裂玉.png" alt="裂玉">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="divider"><span>❈</span></div>
+        <button class="artifact" data-card="images/紅繩手串a.PNG" aria-label="查看紅繩手串">
+            <div class="artifact-image">
+                <img src="images/紅繩手串.png" alt="紅繩手串">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="item">
-        <h2>裂　玉</h2>
-        <p>
-            一分為二，並非終局。<br>
-            裂痕未能斷情，<br>
-            反成彼此坦誠之始。
-        </p>
-    </div>
+        <button class="artifact" data-card="images/言事章a.PNG" aria-label="查看言事章">
+            <div class="artifact-image">
+                <img src="images/言事章.png" alt="言事章">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="divider"><span>❈</span></div>
+        <button class="artifact" data-card="images/長安a.PNG" aria-label="查看長安">
+            <div class="artifact-image">
+                <img src="images/長安.png" alt="長安">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="item">
-        <h2>紅繩手串</h2>
-        <p>
-            紅繩繫腕，心意相連。<br>
-            只願生生世世，不復分離。
-        </p>
-    </div>
+        <button class="artifact" data-card="images/丹青a.PNG" aria-label="查看丹青">
+            <div class="artifact-image">
+                <img src="images/丹青.png" alt="丹青">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="divider"><span>❈</span></div>
+        <button class="artifact" data-card="images/長弓a.PNG" aria-label="查看長弓">
+            <div class="artifact-image">
+                <img src="images/長弓.png" alt="長弓">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="item">
-        <h2>言事章</h2>
-        <p>
-            本為公務所用。<br>
-            偶有閒時，<br>
-            亦能印下些不足為外人道的心思。
-        </p>
-    </div>
+        <button class="artifact" data-card="images/計簿殘頁a.PNG" aria-label="查看計簿殘頁">
+            <div class="artifact-image">
+                <img src="images/計簿殘頁.png" alt="計簿殘頁">
+            </div>
+            <div class="shelf"></div>
+        </button>
 
-    <div class="divider"><span>❈</span></div>
-
-    <div class="item">
-        <h2>長　安</h2>
-        <p>
-            一隻名為長安的小白兔。<br>
-            願山河長安，<br>
-            也願歸處長安。
-        </p>
-    </div>
-
-    <div class="divider"><span>❈</span></div>
-
-    <div class="item">
-        <h2>丹　青</h2>
-        <p>
-            墨彩未乾，春意已成。<br>
-            阿婳閒時最喜揮毫，<br>
-            將所見所念，盡數留於紙上。
-        </p>
-    </div>
-
-     <div class="divider"><span>❈</span></div>
-
-    <div class="item">
-        <h2>長　弓</h2>
-        <p>
-            六藝之一，君子所習。<br>
-            弓弦既張，<br>
-            所射者，亦是本心。
-        </p>
-    </div>
-
-    
-     <div class="divider"><span>❈</span></div>
-
-    <div class="item">
-        <h2>計簿殘頁</h2>
-        <p>
-            今日又被枝椏勾住頭髮。<br>
-            動彈不得。<br>
-            ■■嫌礙事提刀便削去一截，<br>
-            如今髮尾參差，倒也省得再被勾住了。<br>
-            嗚，我的頭髮。<br>
-            ——裴婳
-        </p>
-    </div>
-
-    <div class="divider"><span>❈</span></div>
+    </section>
 
     <p class="ending">
         故事雖盡<br>
@@ -394,20 +594,117 @@ body{
 
 </main>
 
+<div id="tapHint">
+    輕觸藏品，可閱其卷 
+</div>
+
+<!-- 介紹卡彈窗 -->
+<div id="artifactModal" aria-hidden="true">
+
+    <div class="modalBox">
+
+        <button id="closeModal" aria-label="關閉介紹卡">×</button>
+
+        <img id="artifactCard" src="" alt="物件介紹卡">
+
+    </div>
+
+</div>
+
 <script>
-const menuBtn=document.getElementById("menuBtn");
-const sidebar=document.getElementById("sidebar");
-const overlay=document.getElementById("overlay");
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
 
-menuBtn.onclick=function(){
+const artifactButtons = document.querySelectorAll(".artifact");
+const artifactModal = document.getElementById("artifactModal");
+const artifactCard = document.getElementById("artifactCard");
+const closeModal = document.getElementById("closeModal");
+
+/* 側邊欄 */
+menuBtn.onclick = function(){
     sidebar.classList.add("active");
-    overlay.style.display="block";
+    sidebarOverlay.style.display = "block";
+};
+
+sidebarOverlay.onclick = function(){
+    sidebar.classList.remove("active");
+    sidebarOverlay.style.display = "none";
+};
+
+/* 開啟介紹卡 */
+artifactButtons.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        const cardPath = button.dataset.card;
+
+        artifactCard.src = cardPath;
+        artifactCard.alt = "物件介紹卡";
+
+        artifactModal.style.display = "flex";
+
+        requestAnimationFrame(function(){
+            artifactModal.classList.add("active");
+        });
+
+        artifactModal.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+    });
+
+});
+
+/* 關閉介紹卡 */
+function hideArtifactModal(){
+
+    artifactModal.classList.remove("active");
+    artifactModal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+
+    setTimeout(function(){
+        artifactModal.style.display = "none";
+        artifactCard.src = "";
+    },250);
 }
 
-overlay.onclick=function(){
-    sidebar.classList.remove("active");
-    overlay.style.display="none";
+closeModal.onclick = hideArtifactModal;
+
+/* 點背景關閉 */
+artifactModal.addEventListener("click",function(event){
+
+    if(event.target === artifactModal){
+        hideArtifactModal();
+    }
+
+});
+
+/* Esc 關閉 */
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape" && artifactModal.classList.contains("active")){
+        hideArtifactModal();
+    }
+
+});
+/* 手機版進入提示 */
+const tapHint = document.getElementById("tapHint");
+
+if(window.innerWidth <= 768){
+
+    window.addEventListener("load",function(){
+
+        setTimeout(function(){
+            tapHint.classList.add("show");
+        },800);
+
+        setTimeout(function(){
+            tapHint.classList.remove("show");
+        },3800);
+
+    });
+
 }
+
 </script>
 
 </body>
